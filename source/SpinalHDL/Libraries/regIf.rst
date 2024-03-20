@@ -17,7 +17,7 @@ Automatic address allocation
 
   class RegBankExample extends Component {
     val io = new Bundle {
-      apb = slave(Apb3(Apb3Config(16,32)))
+      val apb = slave(Apb3(Apb3Config(16,32)))
     }
     val busif = Apb3BusInterface(io.apb,(0x0000, 100 Byte))
     val M_REG0  = busif.newReg(doc="REG0")
